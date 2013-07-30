@@ -1,0 +1,35 @@
+<h1>Listing risks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>From date</th>
+      <th>From time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @risks.each do |risk| %>
+      <tr>
+        <td><%= risk.location_id %></td>
+        <td><%= risk.type_id %></td>
+        <td><%= risk.description %></td>
+        <td><%= risk.from_date %></td>
+        <td><%= risk.from_time %></td>
+        <td><%= link_to 'Show', risk %></td>
+        <td><%= link_to 'Edit', edit_risk_path(risk) %></td>
+        <td><%= link_to 'Destroy', risk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Risk', new_risk_path %>

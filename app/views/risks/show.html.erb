@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @risk.location_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @risk.type_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @risk.description %>
+</p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @risk.from_date %>
+</p>
+
+<p>
+  <strong>From time:</strong>
+  <%= @risk.from_time %>
+</p>
+
+<%= link_to 'Edit', edit_risk_path(@risk) %> |
+<%= link_to 'Back', risks_path %>
