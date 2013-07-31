@@ -1,10 +1,11 @@
 class RisksController < ApplicationController
   before_action :set_risk, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /risks
   # GET /risks.json
   def index
-    @risks = Risk.all
+    ##@risks = Risk.all
+    @risks = Risk.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /risks/1
@@ -71,4 +72,8 @@ class RisksController < ApplicationController
     def risk_params
       params.require(:risk).permit(:location_id, :type_id, :description, :from_date, :from_time)
     end
+end
+
+def search
+  @risks = Risk.search params[:search]
 end

@@ -1,0 +1,6 @@
+<ul>
+    <% @risks.each do |risk| %>
+  <li><%= link_to risk.title, 
+    :action => 'show', :id => risk.id  %></li>
+  <% end %>
+  </ul>
